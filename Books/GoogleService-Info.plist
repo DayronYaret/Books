@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>543746704458-mufssij0gbcc9fg9n90374n31259h4ch.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.543746704458-mufssij0gbcc9fg9n90374n31259h4ch</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>543746704458-vo1rn2srcirlj0i70l1p090jospmilf4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCtiOo21PZSm4QXbPV86K8UAbEVvA_bbVY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>543746704458</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.carlos.Books</string>
+	<key>PROJECT_ID</key>
+	<string>proyectopem-54056</string>
+	<key>STORAGE_BUCKET</key>
+	<string>proyectopem-54056.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:543746704458:ios:c6aa0748b160b5a9aad2b3</string>
+	<key>DATABASE_URL</key>
+	<string>https://proyectopem-54056.firebaseio.com</string>
+</dict>
+</plist>
