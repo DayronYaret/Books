@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,6 +16,24 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+            transitionToMain()
+            
+        }catch let signOutError as NSError {
+            print("Error singin out: %@",signOutError)
+        }
+        
+    }
+    
+    func transitionToMain(){
+        let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
+               
+               view.window?.rootViewController = mainViewController
+               view.window?.makeKeyAndVisible()
+    }
 
     /*
     // MARK: - Navigation

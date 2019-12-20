@@ -21,6 +21,11 @@
 		FB8038E423AA17FB00651A7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8038E323AA17FA00651A7C /* GoogleService-Info.plist */; };
 		FB8038E623AA1B5300651A7C /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038E523AA1B5300651A7C /* Users.swift */; };
 		FB8038E823AA1E6500651A7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038E723AA1E6500651A7C /* Constants.swift */; };
+		FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80123AD209F00F53658 /* PersonasInteresadasViewController.swift */; };
+		FBA8D80423AD20B200F53658 /* LibrosInteresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80323AD20B200F53658 /* LibrosInteresViewController.swift */; };
+		FBA8D80623AD20C200F53658 /* MisLibrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80523AD20C200F53658 /* MisLibrosViewController.swift */; };
+		FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80723AD225E00F53658 /* HomeNavViewController.swift */; };
+		FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80923AD229E00F53658 /* MainTabBarController.swift */; };
 		FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */; };
 		FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +49,11 @@
 		FB8038E323AA17FA00651A7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB8038E523AA1B5300651A7C /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		FB8038E723AA1E6500651A7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBA8D80123AD209F00F53658 /* PersonasInteresadasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonasInteresadasViewController.swift; sourceTree = "<group>"; };
+		FBA8D80323AD20B200F53658 /* LibrosInteresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrosInteresViewController.swift; sourceTree = "<group>"; };
+		FBA8D80523AD20C200F53658 /* MisLibrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisLibrosViewController.swift; sourceTree = "<group>"; };
+		FBA8D80723AD225E00F53658 /* HomeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavViewController.swift; sourceTree = "<group>"; };
+		FBA8D80923AD229E00F53658 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupModel.swift; sourceTree = "<group>"; };
 		FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +131,11 @@
 				FB8038D923AA113C00651A7C /* SingUpViewController.swift */,
 				FB8038DB23AA114900651A7C /* LoginViewController.swift */,
 				FB8038DD23AA115500651A7C /* HomeViewController.swift */,
+				FBA8D80123AD209F00F53658 /* PersonasInteresadasViewController.swift */,
+				FBA8D80323AD20B200F53658 /* LibrosInteresViewController.swift */,
+				FBA8D80523AD20C200F53658 /* MisLibrosViewController.swift */,
+				FBA8D80723AD225E00F53658 /* HomeNavViewController.swift */,
+				FBA8D80923AD229E00F53658 /* MainTabBarController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -269,14 +284,19 @@
 				FB8038E623AA1B5300651A7C /* Users.swift in Sources */,
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
 				FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */,
+				FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */,
+				FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */,
 				FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */,
+				FBA8D80623AD20C200F53658 /* MisLibrosViewController.swift in Sources */,
 				FB8038E223AA13FF00651A7C /* Utilities.swift in Sources */,
 				FB8038DA23AA113C00651A7C /* SingUpViewController.swift in Sources */,
 				FB8038DC23AA114900651A7C /* LoginViewController.swift in Sources */,
+				FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */,
 				FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */,
 				FB8038DE23AA115500651A7C /* HomeViewController.swift in Sources */,
 				FB8038E823AA1E6500651A7C /* Constants.swift in Sources */,
 				FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */,
+				FBA8D80423AD20B200F53658 /* LibrosInteresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
