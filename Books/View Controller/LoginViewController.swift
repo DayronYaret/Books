@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    var logInModel = LoginModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +46,18 @@ class LoginViewController: UIViewController {
         //Sing In
         let email = self.emailInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = self.passwordInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if(error != nil){
-                //No se puede iniciar sesion
+            
+        logInModel.logIn(email: email, password: password) { (isError,error) in
+            if(isError == true){
                 self.errorLabel.text = error?.localizedDescription
                 self.errorLabel.alpha = 1
             }else{
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                               
+                               self.view.window?.rootViewController = homeViewController
+                               self.view.window?.makeKeyAndVisible()
             }
         }
-        
     }
     
 }

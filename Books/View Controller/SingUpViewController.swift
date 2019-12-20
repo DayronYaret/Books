@@ -20,7 +20,7 @@ class SingUpViewController: UIViewController {
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     var ref: DatabaseReference!
-    
+    var singupmodel = SingupModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
@@ -77,22 +77,23 @@ class SingUpViewController: UIViewController {
             errorLabel.alpha = 1
         }else{
             //creamos el usuario
-            Auth.auth().createUser(withEmail: emailInput.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: passwordInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (result,err) in
-                
-                if  (err != nil){
+            guard let name = nameInput.text else{return}
+            guard let username = usernameInput.text else{return}
+            guard let email = emailInput.text else{return}
+            guard let address = addressInput.text else{return}
+            guard let password = passwordInput.text else{return}
+
+            
+            singupmodel.createAccount(name: name, username: username, email: email, address: address, password: password) { (error) in
+                if( error == true){
                     self.errorLabel.text = "Error creating user"
                     self.errorLabel.alpha = 1
-                    
                 }else{
-                    //Usuario creado correctamente, añadir a la base de datos los valores de los inputs
-                    self.ref = Database.database().reference()
-                    var user = ["name": self.nameInput.text!, "username": self.usernameInput.text!, "email": self.emailInput.text!, "address": self.addressInput.text!, "password": self.passwordInput.text!]
-                    self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue(user)
-                    print(self.ref)
+                    //Mandar al home screen
+                    self.transitionToHome()
                 }
             }
-            //Mandar al home screen
-            self.transitionToHome()
+
         }
     
     }
@@ -103,3 +104,4 @@ class SingUpViewController: UIViewController {
                view.window?.makeKeyAndVisible()
     }
 }
+
