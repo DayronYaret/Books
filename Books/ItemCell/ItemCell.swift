@@ -18,11 +18,10 @@ class ItemCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(image:String, author: String, title:String){
+    func setData(image:UIImage, author: String, title:String){
         self.authorLabel.text = author
         self.titleLabel.text = title
-        self.image.image = UIImage(named: "logo")
-        
+        self.image.image = image
             }
 
 }

@@ -10,6 +10,8 @@
 		9B117FF4328D57E8011E1C59 /* Pods_Books.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357EA97E6B6ED4AAF33E52C3 /* Pods_Books.framework */; };
 		FB626F7A23B0D14A0060E029 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7823B0D14A0060E029 /* ItemCell.swift */; };
 		FB626F7B23B0D14A0060E029 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB626F7923B0D14A0060E029 /* ItemCell.xib */; };
+		FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7C23B0E1400060E029 /* BookItem.swift */; };
+		FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7E23B0E23D0060E029 /* HomeModel.swift */; };
 		FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C323AA10E800651A7C /* AppDelegate.swift */; };
 		FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C523AA10E800651A7C /* SceneDelegate.swift */; };
 		FB8038C823AA10E800651A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C723AA10E800651A7C /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		6845C3CF5A8D2996E0F0019E /* Pods-Books.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books.debug.xcconfig"; path = "Target Support Files/Pods-Books/Pods-Books.debug.xcconfig"; sourceTree = "<group>"; };
 		FB626F7823B0D14A0060E029 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FB626F7923B0D14A0060E029 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		FB626F7C23B0E1400060E029 /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
+		FB626F7E23B0E23D0060E029 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FB8038C023AA10E800651A7C /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8038C323AA10E800651A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8038C523AA10E800651A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				FB8038CE23AA10EA00651A7C /* LaunchScreen.storyboard */,
 				FB8038E323AA17FA00651A7C /* GoogleService-Info.plist */,
 				FB8038D123AA10EA00651A7C /* Info.plist */,
+				FB626F7C23B0E1400060E029 /* BookItem.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			children = (
 				FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */,
 				FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */,
+				FB626F7E23B0E23D0060E029 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
 				FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */,
 				FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */,
+				FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */,
 				FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */,
 				FB626F7A23B0D14A0060E029 /* ItemCell.swift in Sources */,
 				FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */,
@@ -301,6 +308,7 @@
 				FB8038DC23AA114900651A7C /* LoginViewController.swift in Sources */,
 				FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */,
 				FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */,
+				FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */,
 				FB8038DE23AA115500651A7C /* HomeViewController.swift in Sources */,
 				FB8038E823AA1E6500651A7C /* Constants.swift in Sources */,
 				FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */,
