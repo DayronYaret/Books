@@ -12,6 +12,11 @@
 		FB626F7B23B0D14A0060E029 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB626F7923B0D14A0060E029 /* ItemCell.xib */; };
 		FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7C23B0E1400060E029 /* BookItem.swift */; };
 		FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7E23B0E23D0060E029 /* HomeModel.swift */; };
+		FB626F8223B15FBF0060E029 /* MisLibrosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8123B15FBF0060E029 /* MisLibrosModel.swift */; };
+		FB626F8423B164F20060E029 /* LibrosInteresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8323B164F20060E029 /* LibrosInteresModel.swift */; };
+		FB626F8623B168740060E029 /* PersonasInteresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8523B168740060E029 /* PersonasInteresModel.swift */; };
+		FB626F8823B168EA0060E029 /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8723B168EA0060E029 /* Likes.swift */; };
+		FB626F8A23B173D70060E029 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8923B173D70060E029 /* AddBookViewController.swift */; };
 		FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C323AA10E800651A7C /* AppDelegate.swift */; };
 		FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C523AA10E800651A7C /* SceneDelegate.swift */; };
 		FB8038C823AA10E800651A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C723AA10E800651A7C /* ViewController.swift */; };
@@ -42,6 +47,11 @@
 		FB626F7923B0D14A0060E029 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		FB626F7C23B0E1400060E029 /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
 		FB626F7E23B0E23D0060E029 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		FB626F8123B15FBF0060E029 /* MisLibrosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisLibrosModel.swift; sourceTree = "<group>"; };
+		FB626F8323B164F20060E029 /* LibrosInteresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrosInteresModel.swift; sourceTree = "<group>"; };
+		FB626F8523B168740060E029 /* PersonasInteresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonasInteresModel.swift; sourceTree = "<group>"; };
+		FB626F8723B168EA0060E029 /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		FB626F8923B173D70060E029 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		FB8038C023AA10E800651A7C /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8038C323AA10E800651A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8038C523AA10E800651A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 				FB8038E323AA17FA00651A7C /* GoogleService-Info.plist */,
 				FB8038D123AA10EA00651A7C /* Info.plist */,
 				FB626F7C23B0E1400060E029 /* BookItem.swift */,
+				FB626F8723B168EA0060E029 /* Likes.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 				FBA8D80523AD20C200F53658 /* MisLibrosViewController.swift */,
 				FBA8D80723AD225E00F53658 /* HomeNavViewController.swift */,
 				FBA8D80923AD229E00F53658 /* MainTabBarController.swift */,
+				FB626F8923B173D70060E029 /* AddBookViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -173,6 +185,9 @@
 				FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */,
 				FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */,
 				FB626F7E23B0E23D0060E029 /* HomeModel.swift */,
+				FB626F8123B15FBF0060E029 /* MisLibrosModel.swift */,
+				FB626F8323B164F20060E029 /* LibrosInteresModel.swift */,
+				FB626F8523B168740060E029 /* PersonasInteresModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,12 +309,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB626F8223B15FBF0060E029 /* MisLibrosModel.swift in Sources */,
+				FB626F8A23B173D70060E029 /* AddBookViewController.swift in Sources */,
 				FB8038E623AA1B5300651A7C /* Users.swift in Sources */,
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
 				FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */,
 				FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */,
 				FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */,
 				FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */,
+				FB626F8623B168740060E029 /* PersonasInteresModel.swift in Sources */,
 				FB626F7A23B0D14A0060E029 /* ItemCell.swift in Sources */,
 				FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */,
 				FBA8D80623AD20C200F53658 /* MisLibrosViewController.swift in Sources */,
@@ -309,6 +327,8 @@
 				FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */,
 				FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */,
 				FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */,
+				FB626F8823B168EA0060E029 /* Likes.swift in Sources */,
+				FB626F8423B164F20060E029 /* LibrosInteresModel.swift in Sources */,
 				FB8038DE23AA115500651A7C /* HomeViewController.swift in Sources */,
 				FB8038E823AA1E6500651A7C /* Constants.swift in Sources */,
 				FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */,
