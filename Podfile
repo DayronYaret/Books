@@ -12,5 +12,6 @@ pod 'Firebase/Analytics'
 # https://firebase.google.com/docs/ios/setup#available-pods
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod 'Firebase/Storage'
 
 end

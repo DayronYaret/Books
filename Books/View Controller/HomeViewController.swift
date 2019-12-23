@@ -8,12 +8,19 @@
 
 import UIKit
 import FirebaseAuth
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    let dataArray = ["AAA","BBB","CCC","DDD"]
 
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        
+        //Register cells
+        self.collectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
     }
     
     @IBAction func logOut(_ sender: Any) {
@@ -34,7 +41,20 @@ class HomeViewController: UIViewController {
                view.window?.rootViewController = mainViewController
                view.window?.makeKeyAndVisible()
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        cell.setData(image: "logo", author: self.dataArray[indexPath.row], title: self.dataArray[indexPath.row])
+        return cell
+    }
 
+    
+   
     /*
     // MARK: - Navigation
 
@@ -44,5 +64,6 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
