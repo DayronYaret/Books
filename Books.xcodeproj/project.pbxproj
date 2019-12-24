@@ -18,6 +18,7 @@
 		FB626F8823B168EA0060E029 /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8723B168EA0060E029 /* Likes.swift */; };
 		FB626F8A23B173D70060E029 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8923B173D70060E029 /* AddBookViewController.swift */; };
 		FB626F8C23B2191D0060E029 /* AddBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8B23B2191D0060E029 /* AddBookModel.swift */; };
+		FB626F8E23B26A4E0060E029 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8D23B26A4E0060E029 /* ImagePicker.swift */; };
 		FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C323AA10E800651A7C /* AppDelegate.swift */; };
 		FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C523AA10E800651A7C /* SceneDelegate.swift */; };
 		FB8038C823AA10E800651A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C723AA10E800651A7C /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		FB626F8723B168EA0060E029 /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		FB626F8923B173D70060E029 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		FB626F8B23B2191D0060E029 /* AddBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookModel.swift; sourceTree = "<group>"; };
+		FB626F8D23B26A4E0060E029 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FB8038C023AA10E800651A7C /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8038C323AA10E800651A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8038C523AA10E800651A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				FB8038D123AA10EA00651A7C /* Info.plist */,
 				FB626F7C23B0E1400060E029 /* BookItem.swift */,
 				FB626F8723B168EA0060E029 /* Likes.swift */,
+				FB626F8D23B26A4E0060E029 /* ImagePicker.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */,
 				FBA8D80623AD20C200F53658 /* MisLibrosViewController.swift in Sources */,
 				FB8038E223AA13FF00651A7C /* Utilities.swift in Sources */,
+				FB626F8E23B26A4E0060E029 /* ImagePicker.swift in Sources */,
 				FB8038DA23AA113C00651A7C /* SingUpViewController.swift in Sources */,
 				FB8038DC23AA114900651A7C /* LoginViewController.swift in Sources */,
 				FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */,

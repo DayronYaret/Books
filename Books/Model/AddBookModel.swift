@@ -34,8 +34,11 @@ class AddBookModel{
                             return
                         }
                         let book = BookItem(author: autor, image: String(url!.absoluteString), isbn: isbn, title: title, user: currentUser!, correo: snapshot.childSnapshot(forPath: "users/"+currentUser!+"/email/").value as! String)
-                        ref.child("booksUser").child(currentUser!).child(book.title+"_"+book.isbn).setValue(book)
-                        ref.child("allBooks").child(currentUser!+"_"+book.title+"_"+book.isbn).setValue(book)
+                        print( snapshot.childSnapshot(forPath:"users/"+currentUser!+"/email/").value!)
+                       
+                            let dictionary = ["author": autor, "image": String(url!.absoluteString), "isbn": isbn, "title": title, "user": currentUser!, "correo": snapshot.childSnapshot(forPath: "users/"+currentUser!+"/email/").value as! String]
+                        ref.child("booksUser").child(currentUser!).child(book.title+"_"+book.isbn).setValue(dictionary)
+                        ref.child("allBooks").child(currentUser!+"_"+book.title+"_"+book.isbn).setValue(dictionary)
                         completion(false)
                     }
                 }

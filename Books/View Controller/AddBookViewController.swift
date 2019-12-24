@@ -15,13 +15,19 @@ class AddBookViewController: UIViewController {
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var authorInput: UITextField!
     @IBOutlet weak var isbnInput: UITextField!
+    var addBookModel = AddBookModel()
+    var imagePicker:ImagePicker!
+
     @IBOutlet weak var image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        
         //Damos estilo a los elementos
         setUp()
         // Do any additional setup after loading the view.
+    
     }
     
     func setUp(){
@@ -30,6 +36,10 @@ class AddBookViewController: UIViewController {
         Utilities.styleTextField(titleInput)
         Utilities.styleTextField(isbnInput)
         Utilities.styleTextField(authorInput)
+
+        //escondemos tabbar
+        
+        
     }
     
     func validatreFields()-> String?{
@@ -45,14 +55,27 @@ class AddBookViewController: UIViewController {
         
         return nil
     }
-    @IBAction func addButtonTapped(_ sender: Any) {
+    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
         let error = validatreFields()
         if(error != nil){
             errorLabel.alpha = 1
             errorLabel.text = error
-        }else{
             
-        }
+        }else{
+            addBookModel.addBook(autor: authorInput.text!, title: titleInput.text!, isbn: isbnInput.text!, image: image.image!) { (error) in
+                if(error == false){
+
+                    
+                }else{
+                    self.errorLabel.text = error.description
+                    self.errorLabel.alpha = 1
+                }
+                }
+            }
+    }
+    @IBAction func addPhoto(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
     }
     /*
     // MARK: - Navigation
@@ -64,4 +87,10 @@ class AddBookViewController: UIViewController {
     }
     */
 
+}
+
+extension AddBookViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        self.image.image = image}
 }

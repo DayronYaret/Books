@@ -32,6 +32,10 @@ class MisLibrosViewController: UIViewController,UICollectionViewDataSource, UICo
         addButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
                addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
                addButton.clipsToBounds = true
+        
+        //volvemos a poner el tabbar
+
+        
         //Register cells
         self.collectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
         
@@ -83,7 +87,10 @@ class MisLibrosViewController: UIViewController,UICollectionViewDataSource, UICo
             }
         }
     }
-
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
