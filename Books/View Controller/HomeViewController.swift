@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var cantidad:Int = 0
     let ref = Database.database().reference(withPath: "allBooks")
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +28,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         //Register cells
         self.collectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
-        
+        //Damos forma al botton de añadir
+
+        addButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
+        addButton.clipsToBounds = true
         //llenamos el array
         refreshView()
     }

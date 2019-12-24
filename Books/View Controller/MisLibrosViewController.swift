@@ -20,12 +20,18 @@ class MisLibrosViewController: UIViewController,UICollectionViewDataSource, UICo
     var cantidad:Int = 0
     let ref = Database.database().reference(withPath: "booksUser")
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.collectionView.dataSource = self
         
+        
+        //Damos forma al botton de añadir
+        addButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+               addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
+               addButton.clipsToBounds = true
         //Register cells
         self.collectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
         
