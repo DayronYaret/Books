@@ -50,7 +50,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    	
     func transitionToMain(){
         let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
         

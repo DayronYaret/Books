@@ -42,6 +42,10 @@ class MisLibrosViewController: UIViewController,UICollectionViewDataSource, UICo
         //llenamos el array
         refreshView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

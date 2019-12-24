@@ -27,7 +27,6 @@ class AddBookViewController: UIViewController {
         //Damos estilo a los elementos
         setUp()
         // Do any additional setup after loading the view.
-    
     }
     
     func setUp(){
