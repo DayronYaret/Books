@@ -23,5 +23,15 @@ class ItemCell: UICollectionViewCell {
         self.titleLabel.text = title
         self.image.image = image
             }
+    func getImage()->UIImage {
+        return self.image.image!
+    }
+    func getAuthor()->String {
+        return self.authorLabel.text!
+    }
+    func getTitle()->String {
+        return self.titleLabel.text!
+    }
+    
 
 }

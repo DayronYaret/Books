@@ -10,12 +10,15 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import Firebase
+
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    var homeModel = HomeModel()
+    let homeModel = HomeModel()
+    let alertService = AlertService()
     var storage = Storage.storage()
     var bookItemArrayList : [BookItem] = []
     var image:UIImage?
     var cantidad:Int = 0
+    
     let ref = Database.database().reference(withPath: "allBooks")
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addButton: UIButton!
@@ -54,7 +57,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
-    	
+    
     func transitionToMain(){
         let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
         
@@ -75,31 +78,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         //Añadimos la opcion de pulsar en el collectionViewCell
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-
-            DispatchQueue.global().async { [weak self] in
+        
+        DispatchQueue.global().async { [weak self] in
             self!.homeModel.fillArray { (error, array) in
                 if(error == false){
                     let url = URL(string:array[indexPath.row].image)
                     if let data = try? Data(contentsOf: url!) {
-                      if let image = UIImage(data: data) {
-                          DispatchQueue.main.async {
-                              cell.setData(image: image, author: array[indexPath.row].author, title: array[indexPath.row].title)
-                            print(array.count, "cantidad")
-                            
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                cell.setData(image: image, author: array[indexPath.row].author, title: array[indexPath.row].title)
+                                print(array.count, "cantidad")
+                                
+                            }
                         }
-                      }
-                      else
-                      {
-                          print("Fallo en la descarga de la imagen")
-                      }
-                      
-                  }
+                        else
+                        {
+                            print("Fallo en la descarga de la imagen")
+                        }
+                        
+                    }
                     self?.bookItemArrayList = array
-
+                    
                 }
                 
             }
-  
+            
         }
         
         return cell
@@ -112,19 +115,27 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
                 self.collectionView.reloadData()
             }
         }
-
+        
     }
     //funcion al pulsar la cell
     @objc func tap(_ sender: UITapGestureRecognizer) {
-    
-       let location = sender.location(in: self.collectionView)
-       let indexPath = self.collectionView.indexPathForItem(at: location)
-    
-       if let index = indexPath {
-          print("Got clicked on index: \(index)!")
-       }
-    }
         
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        
+        if let index = indexPath {
+            var cell = self.bookItemArrayList[index.row]
+            let url = URL(string:cell.image)
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage(data: data) {
+                    let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author)
+                    present(alertVC,animated: true)
+                    
+                }
+            }
+            
+        }
+    }
 }
 
 
