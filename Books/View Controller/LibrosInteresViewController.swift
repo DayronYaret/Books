@@ -99,7 +99,13 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
         let url = URL(string:cell.image)
         if let data = try? Data(contentsOf: url!) {
             if let image = UIImage(data: data) {
-                let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo)
+                let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo, imageURL: cell.image){
+                    Constants.Values.user = cell.user
+                    let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
+                    
+                    self.view.window?.rootViewController = profileViewController
+                    self.view.window?.makeKeyAndVisible()
+                }
                 present(alertVC,animated: true)
                 
             }

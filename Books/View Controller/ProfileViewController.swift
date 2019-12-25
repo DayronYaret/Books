@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource,UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = Constants.Values.user
+        
         
         setLabel()
         // Do any additional setup after loading the view.
@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource,UIColl
         refreshView()
     }
     func setLabel(){
+        user = Constants.Values.user
         profileModel.getUsername(user: user) { (error, username) in
             if(!error){
                 self.usernameLabel.text = username

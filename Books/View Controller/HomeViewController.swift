@@ -126,12 +126,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         if let index = indexPath {
             
             let cell = self.bookItemArrayList[index.row]
-            DispatchQueue.main.async {
-                let vc = ProfileViewController()
-                vc.user = cell.user
-                
-            }
-
             let url = URL(string:cell.image)
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
