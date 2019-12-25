@@ -19,6 +19,7 @@
 		FB626F8A23B173D70060E029 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8923B173D70060E029 /* AddBookViewController.swift */; };
 		FB626F8C23B2191D0060E029 /* AddBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8B23B2191D0060E029 /* AddBookModel.swift */; };
 		FB626F8E23B26A4E0060E029 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F8D23B26A4E0060E029 /* ImagePicker.swift */; };
+		FB626F9123B36A890060E029 /* HomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F9023B36A890060E029 /* HomeDialog.swift */; };
 		FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C323AA10E800651A7C /* AppDelegate.swift */; };
 		FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C523AA10E800651A7C /* SceneDelegate.swift */; };
 		FB8038C823AA10E800651A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8038C723AA10E800651A7C /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		FB626F8923B173D70060E029 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		FB626F8B23B2191D0060E029 /* AddBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookModel.swift; sourceTree = "<group>"; };
 		FB626F8D23B26A4E0060E029 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		FB626F9023B36A890060E029 /* HomeDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDialog.swift; sourceTree = "<group>"; };
 		FB8038C023AA10E800651A7C /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8038C323AA10E800651A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8038C523AA10E800651A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = ItemCell;
 			sourceTree = "<group>";
 		};
+		FB626F8F23B36A3F0060E029 /* Custon Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				FB626F9023B36A890060E029 /* HomeDialog.swift */,
+			);
+			path = "Custon Dialogs";
+			sourceTree = "<group>";
+		};
 		FB8038B723AA10E800651A7C = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		FB8038C223AA10E800651A7C /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				FB626F8F23B36A3F0060E029 /* Custon Dialogs */,
 				FB626F7523B0D0DD0060E029 /* ItemCell */,
 				FBB544AA23ACCF4400C1FE99 /* Model */,
 				FB8038E023AA13BC00651A7C /* Helpers */,
@@ -321,6 +332,7 @@
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
 				FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */,
 				FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */,
+				FB626F9123B36A890060E029 /* HomeDialog.swift in Sources */,
 				FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */,
 				FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */,
 				FB626F8623B168740060E029 /* PersonasInteresModel.swift in Sources */,

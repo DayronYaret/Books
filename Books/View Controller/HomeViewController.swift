@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import Firebase
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var homeModel = HomeModel()
     var storage = Storage.storage()
     var bookItemArrayList : [BookItem] = []
@@ -71,7 +71,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //usamos la view que creamos
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        //Añadimos la opcion de pulsar en el collectionViewCell
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+
             DispatchQueue.global().async { [weak self] in
             self!.homeModel.fillArray { (error, array) in
                 if(error == false){
@@ -109,6 +113,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
 
+    }
+    //funcion al pulsar la cell
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+    
+       let location = sender.location(in: self.collectionView)
+       let indexPath = self.collectionView.indexPathForItem(at: location)
+    
+       if let index = indexPath {
+          print("Got clicked on index: \(index)!")
+       }
     }
         
 }

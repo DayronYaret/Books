@@ -44,6 +44,10 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
+        //Añadimos la opcion de pulsar en el collectionViewCell
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        
                    DispatchQueue.global().async { [weak self] in
                    self!.librosInteresModel.fillArray { (error, array) in
                        if(error == false){
@@ -80,6 +84,16 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
                 self.collectionView.reloadData()
             }
         }
+    }
+    //funcion al pulsar la cell
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+    
+       let location = sender.location(in: self.collectionView)
+       let indexPath = self.collectionView.indexPathForItem(at: location)
+    
+       if let index = indexPath {
+          print("Got clicked on index: \(index)!")
+       }
     }
 
     /*
