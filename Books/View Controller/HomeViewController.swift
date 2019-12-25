@@ -124,11 +124,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         let indexPath = self.collectionView.indexPathForItem(at: location)
         
         if let index = indexPath {
-            var cell = self.bookItemArrayList[index.row]
+            let cell = self.bookItemArrayList[index.row]
             let url = URL(string:cell.image)
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
-                    let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author)
+                    let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo,imageURL: cell.image)
                     present(alertVC,animated: true)
                     
                 }

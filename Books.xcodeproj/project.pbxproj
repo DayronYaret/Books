@@ -41,6 +41,12 @@
 		FBAE090523B36E8700D060A5 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090423B36E8700D060A5 /* AlertViewController.swift */; };
 		FBAE090723B372F400D060A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090623B372F400D060A5 /* ProfileViewController.swift */; };
 		FBAE090B23B373C900D060A5 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090A23B373C900D060A5 /* AlertService.swift */; };
+		FBAE090E23B380D600D060A5 /* AlertMyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090D23B380D600D060A5 /* AlertMyBooksViewController.swift */; };
+		FBAE091023B380E500D060A5 /* AlertMyBooksStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE090F23B380E500D060A5 /* AlertMyBooksStoryboard.storyboard */; };
+		FBAE091223B380F600D060A5 /* AlertMyBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE091123B380F600D060A5 /* AlertMyBooksService.swift */; };
+		FBAE091523B3871F00D060A5 /* AlertInteresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE091423B3871F00D060A5 /* AlertInteresViewController.swift */; };
+		FBAE091723B3872E00D060A5 /* AlertInteresStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE091623B3872E00D060A5 /* AlertInteresStoryboard.storyboard */; };
+		FBAE091923B3874000D060A5 /* AlertInteresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE091823B3874000D060A5 /* AlertInteresService.swift */; };
 		FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */; };
 		FBB544AE23ACD5D900C1FE99 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +90,12 @@
 		FBAE090423B36E8700D060A5 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		FBAE090623B372F400D060A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FBAE090A23B373C900D060A5 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		FBAE090D23B380D600D060A5 /* AlertMyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMyBooksViewController.swift; sourceTree = "<group>"; };
+		FBAE090F23B380E500D060A5 /* AlertMyBooksStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertMyBooksStoryboard.storyboard; sourceTree = "<group>"; };
+		FBAE091123B380F600D060A5 /* AlertMyBooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMyBooksService.swift; sourceTree = "<group>"; };
+		FBAE091423B3871F00D060A5 /* AlertInteresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInteresViewController.swift; sourceTree = "<group>"; };
+		FBAE091623B3872E00D060A5 /* AlertInteresStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertInteresStoryboard.storyboard; sourceTree = "<group>"; };
+		FBAE091823B3874000D060A5 /* AlertInteresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInteresService.swift; sourceTree = "<group>"; };
 		FBB544AB23ACCF8000C1FE99 /* SingupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupModel.swift; sourceTree = "<group>"; };
 		FBB544AD23ACD5D900C1FE99 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +159,8 @@
 		FB8038C223AA10E800651A7C /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				FBAE091323B3870D00D060A5 /* AlertInteres */,
+				FBAE090C23B380A500D060A5 /* AlertMyBooks */,
 				FBAE090923B3735F00D060A5 /* AlertHome */,
 				FB626F7523B0D0DD0060E029 /* ItemCell */,
 				FBB544AA23ACCF4400C1FE99 /* Model */,
@@ -202,6 +216,26 @@
 				FBAE090A23B373C900D060A5 /* AlertService.swift */,
 			);
 			path = AlertHome;
+			sourceTree = "<group>";
+		};
+		FBAE090C23B380A500D060A5 /* AlertMyBooks */ = {
+			isa = PBXGroup;
+			children = (
+				FBAE090D23B380D600D060A5 /* AlertMyBooksViewController.swift */,
+				FBAE090F23B380E500D060A5 /* AlertMyBooksStoryboard.storyboard */,
+				FBAE091123B380F600D060A5 /* AlertMyBooksService.swift */,
+			);
+			path = AlertMyBooks;
+			sourceTree = "<group>";
+		};
+		FBAE091323B3870D00D060A5 /* AlertInteres */ = {
+			isa = PBXGroup;
+			children = (
+				FBAE091423B3871F00D060A5 /* AlertInteresViewController.swift */,
+				FBAE091623B3872E00D060A5 /* AlertInteresStoryboard.storyboard */,
+				FBAE091823B3874000D060A5 /* AlertInteresService.swift */,
+			);
+			path = AlertInteres;
 			sourceTree = "<group>";
 		};
 		FBB544AA23ACCF4400C1FE99 /* Model */ = {
@@ -279,9 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8038D023AA10EA00651A7C /* LaunchScreen.storyboard in Resources */,
+				FBAE091723B3872E00D060A5 /* AlertInteresStoryboard.storyboard in Resources */,
 				FB8038E423AA17FB00651A7C /* GoogleService-Info.plist in Resources */,
 				FB626F7B23B0D14A0060E029 /* ItemCell.xib in Resources */,
 				FB8038CD23AA10EA00651A7C /* Assets.xcassets in Resources */,
+				FBAE091023B380E500D060A5 /* AlertMyBooksStoryboard.storyboard in Resources */,
 				FBAE090323B36E5700D060A5 /* AlertStoryboard.storyboard in Resources */,
 				FB8038CB23AA10E800651A7C /* Main.storyboard in Resources */,
 			);
@@ -337,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB626F8223B15FBF0060E029 /* MisLibrosModel.swift in Sources */,
+				FBAE091923B3874000D060A5 /* AlertInteresService.swift in Sources */,
 				FB626F8A23B173D70060E029 /* AddBookViewController.swift in Sources */,
 				FB8038E623AA1B5300651A7C /* Users.swift in Sources */,
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
@@ -360,11 +397,14 @@
 				FB626F8823B168EA0060E029 /* Likes.swift in Sources */,
 				FB626F8423B164F20060E029 /* LibrosInteresModel.swift in Sources */,
 				FB8038DE23AA115500651A7C /* HomeViewController.swift in Sources */,
+				FBAE091523B3871F00D060A5 /* AlertInteresViewController.swift in Sources */,
+				FBAE090E23B380D600D060A5 /* AlertMyBooksViewController.swift in Sources */,
 				FBAE090523B36E8700D060A5 /* AlertViewController.swift in Sources */,
 				FB626F8C23B2191D0060E029 /* AddBookModel.swift in Sources */,
 				FB8038E823AA1E6500651A7C /* Constants.swift in Sources */,
 				FBB544AC23ACCF8000C1FE99 /* SingupModel.swift in Sources */,
 				FBA8D80423AD20B200F53658 /* LibrosInteresViewController.swift in Sources */,
+				FBAE091223B380F600D060A5 /* AlertMyBooksService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

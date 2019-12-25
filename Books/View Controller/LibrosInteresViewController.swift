@@ -15,6 +15,7 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
     
     var librosInteresModel = LibrosInteresModel()
     var storage = Storage.storage()
+    let alertService = AlertInteresService()
     var bookItemArrayList : [BookItem] = []
     var image:UIImage?
     var cantidad:Int = 0
@@ -51,6 +52,7 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
                    DispatchQueue.global().async { [weak self] in
                    self!.librosInteresModel.fillArray { (error, array) in
                        if(error == false){
+                        print(array[indexPath.row])
                            let url = URL(string:array[indexPath.row].image)
                            if let data = try? Data(contentsOf: url!) {
                              if let image = UIImage(data: data) {
@@ -87,12 +89,22 @@ class LibrosInteresViewController: UIViewController,UICollectionViewDataSource, 
     }
     //funcion al pulsar la cell
     @objc func tap(_ sender: UITapGestureRecognizer) {
-    
-       let location = sender.location(in: self.collectionView)
+    dismiss(animated: true)
+        let location = sender.location(in: self.collectionView)
        let indexPath = self.collectionView.indexPathForItem(at: location)
     
        if let index = indexPath {
           print("Got clicked on index: \(index)!")
+        let cell = self.bookItemArrayList[index.row]
+        let url = URL(string:cell.image)
+        if let data = try? Data(contentsOf: url!) {
+            if let image = UIImage(data: data) {
+                let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo)
+                present(alertVC,animated: true)
+                
+            }
+        }
+        
        }
     }
 

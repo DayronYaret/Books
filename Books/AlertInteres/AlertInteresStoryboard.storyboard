@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert Interes View Controller-->
+        <scene sceneID="CAZ-D6-99k">
+            <objects>
+                <viewController storyboardIdentifier="AlertInteresVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="ScU-hD-vZJ" customClass="AlertInteresViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gny-iN-yWR" customClass="AlertV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iue-Mk-sjS">
+                                <rect key="frame" x="69.5" y="274" width="275" height="348"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mlH-xK-3RD">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="191"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="191" id="4vN-wi-ez2"/>
+                                            <constraint firstAttribute="width" constant="275" id="uUx-H8-aZN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nrv-V7-Ruu">
+                                        <rect key="frame" x="0.0" y="199" width="275" height="149"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e15-u5-PUx">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNz-1Z-lUP">
+                                                <rect key="frame" x="0.0" y="30" width="275" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d6-dG-JLs">
+                                                <rect key="frame" x="0.0" y="60" width="275" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                                <state key="normal" title="NOT INTERESTED ANYMORE">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="notInterestedTapped:" destination="ScU-hD-vZJ" eventType="touchUpInside" id="o6e-XK-JUU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-60-xTH">
+                                                <rect key="frame" x="0.0" y="90" width="275" height="29"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                                <state key="normal" title="GO TO USER PROFILE">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goToUserProfileTapped:" destination="ScU-hD-vZJ" eventType="touchUpInside" id="JDJ-hz-eLS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXc-uL-jFU">
+                                                <rect key="frame" x="0.0" y="120" width="275" height="29"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                                <state key="normal" title="CONTACT WITH THE USER">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactTapped:" destination="ScU-hD-vZJ" eventType="touchUpInside" id="v1b-KX-Rqe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVq-0n-nYz">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                        <color key="backgroundColor" red="0.5058480501" green="0.46279251580000003" blue="0.95674568410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backTapped:" destination="ScU-hD-vZJ" eventType="touchUpInside" id="Q8J-oe-ci0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Nrv-V7-Ruu" secondAttribute="bottom" id="1QI-TR-zTk"/>
+                                    <constraint firstAttribute="trailing" secondItem="mlH-xK-3RD" secondAttribute="trailing" id="G8e-gF-WRX"/>
+                                    <constraint firstItem="mlH-xK-3RD" firstAttribute="top" secondItem="Iue-Mk-sjS" secondAttribute="top" id="J8t-jV-nYC"/>
+                                    <constraint firstItem="mVq-0n-nYz" firstAttribute="top" secondItem="Iue-Mk-sjS" secondAttribute="top" id="JGn-8K-KMm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nrv-V7-Ruu" secondAttribute="trailing" id="Lr4-mn-S4t"/>
+                                    <constraint firstItem="mlH-xK-3RD" firstAttribute="leading" secondItem="Iue-Mk-sjS" secondAttribute="leading" id="NIk-DI-7tf"/>
+                                    <constraint firstItem="Nrv-V7-Ruu" firstAttribute="top" secondItem="mlH-xK-3RD" secondAttribute="bottom" constant="8" id="asw-sh-v5b"/>
+                                    <constraint firstItem="mVq-0n-nYz" firstAttribute="leading" secondItem="Iue-Mk-sjS" secondAttribute="leading" id="bBJ-pd-CW5"/>
+                                    <constraint firstAttribute="width" constant="275" id="cCd-SC-Y1J"/>
+                                    <constraint firstItem="Nrv-V7-Ruu" firstAttribute="leading" secondItem="Iue-Mk-sjS" secondAttribute="leading" id="paT-qW-ROn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.42730693310000001" green="0.4141993585" blue="0.44041450780000002" alpha="0.34507042249999997" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iue-Mk-sjS" firstAttribute="centerY" secondItem="Gny-iN-yWR" secondAttribute="centerY" id="Ip0-7D-ZVx"/>
+                            <constraint firstItem="Iue-Mk-sjS" firstAttribute="centerX" secondItem="Gny-iN-yWR" secondAttribute="centerX" id="fhI-ES-w8E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZQX-9M-b2J"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="rNz-1Z-lUP" id="ZdO-Zf-m3d"/>
+                        <outlet property="image" destination="mlH-xK-3RD" id="J7x-5k-Lr8"/>
+                        <outlet property="titleLabel" destination="e15-u5-PUx" id="Poy-Up-Qh0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uh6-nC-738" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.86956521739131" y="150.66964285714286"/>
+        </scene>
+    </scenes>
+</document>

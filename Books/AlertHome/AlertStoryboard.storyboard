@@ -25,6 +25,15 @@
                                             <constraint firstAttribute="width" constant="275" id="vFK-wh-gRv"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-Yi-4FU">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                        <color key="backgroundColor" red="0.5058480501" green="0.46279251580000003" blue="0.95674568410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backTapped:" destination="IHG-SZ-OCX" eventType="touchUpInside" id="Ma4-jm-9co"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="woU-Ai-Vhw">
                                         <rect key="frame" x="0.0" y="199" width="275" height="149"/>
                                         <subviews>
@@ -79,6 +88,8 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="woU-Ai-Vhw" secondAttribute="bottom" id="4ky-6a-5yi"/>
+                                    <constraint firstItem="4zA-Yi-4FU" firstAttribute="top" secondItem="YKn-gI-yy8" secondAttribute="top" id="Owh-gb-7I9"/>
+                                    <constraint firstItem="4zA-Yi-4FU" firstAttribute="leading" secondItem="YKn-gI-yy8" secondAttribute="leading" id="QOk-Pw-08r"/>
                                     <constraint firstItem="woU-Ai-Vhw" firstAttribute="leading" secondItem="YKn-gI-yy8" secondAttribute="leading" id="W0D-fc-Rl7"/>
                                     <constraint firstAttribute="width" constant="275" id="cYD-gl-de7"/>
                                     <constraint firstItem="woU-Ai-Vhw" firstAttribute="top" secondItem="6dB-6Y-5jW" secondAttribute="bottom" constant="8" id="eAf-bE-eGI"/>
