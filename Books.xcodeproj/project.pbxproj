@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9B117FF4328D57E8011E1C59 /* Pods_Books.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357EA97E6B6ED4AAF33E52C3 /* Pods_Books.framework */; };
+		FB25F19623B3CD7900CC2FAC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25F19523B3CD7900CC2FAC /* ProfileViewController.swift */; };
+		FB25F19823B3D14900CC2FAC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25F19723B3D14900CC2FAC /* ProfileModel.swift */; };
+		FB25F19B23B3DA4B00CC2FAC /* AlertProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25F19A23B3DA4B00CC2FAC /* AlertProfileViewController.swift */; };
+		FB25F19D23B3DA5600CC2FAC /* AlertProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB25F19C23B3DA5600CC2FAC /* AlertProfileStoryboard.storyboard */; };
+		FB25F19F23B3DAC600CC2FAC /* AlertProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB25F19E23B3DAC600CC2FAC /* AlertProfileService.swift */; };
 		FB626F7A23B0D14A0060E029 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7823B0D14A0060E029 /* ItemCell.swift */; };
 		FB626F7B23B0D14A0060E029 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB626F7923B0D14A0060E029 /* ItemCell.xib */; };
 		FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB626F7C23B0E1400060E029 /* BookItem.swift */; };
@@ -39,7 +44,6 @@
 		FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8D80923AD229E00F53658 /* MainTabBarController.swift */; };
 		FBAE090323B36E5700D060A5 /* AlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE090223B36E5700D060A5 /* AlertStoryboard.storyboard */; };
 		FBAE090523B36E8700D060A5 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090423B36E8700D060A5 /* AlertViewController.swift */; };
-		FBAE090723B372F400D060A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090623B372F400D060A5 /* ProfileViewController.swift */; };
 		FBAE090B23B373C900D060A5 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090A23B373C900D060A5 /* AlertService.swift */; };
 		FBAE090E23B380D600D060A5 /* AlertMyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE090D23B380D600D060A5 /* AlertMyBooksViewController.swift */; };
 		FBAE091023B380E500D060A5 /* AlertMyBooksStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAE090F23B380E500D060A5 /* AlertMyBooksStoryboard.storyboard */; };
@@ -55,6 +59,11 @@
 		357EA97E6B6ED4AAF33E52C3 /* Pods_Books.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Books.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BF4046CF364783E9C972E3 /* Pods-Books.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books.release.xcconfig"; path = "Target Support Files/Pods-Books/Pods-Books.release.xcconfig"; sourceTree = "<group>"; };
 		6845C3CF5A8D2996E0F0019E /* Pods-Books.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books.debug.xcconfig"; path = "Target Support Files/Pods-Books/Pods-Books.debug.xcconfig"; sourceTree = "<group>"; };
+		FB25F19523B3CD7900CC2FAC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FB25F19723B3D14900CC2FAC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		FB25F19A23B3DA4B00CC2FAC /* AlertProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProfileViewController.swift; sourceTree = "<group>"; };
+		FB25F19C23B3DA5600CC2FAC /* AlertProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		FB25F19E23B3DAC600CC2FAC /* AlertProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProfileService.swift; sourceTree = "<group>"; };
 		FB626F7823B0D14A0060E029 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FB626F7923B0D14A0060E029 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		FB626F7C23B0E1400060E029 /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
@@ -88,7 +97,6 @@
 		FBA8D80923AD229E00F53658 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FBAE090223B36E5700D060A5 /* AlertStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertStoryboard.storyboard; sourceTree = "<group>"; };
 		FBAE090423B36E8700D060A5 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
-		FBAE090623B372F400D060A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FBAE090A23B373C900D060A5 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		FBAE090D23B380D600D060A5 /* AlertMyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMyBooksViewController.swift; sourceTree = "<group>"; };
 		FBAE090F23B380E500D060A5 /* AlertMyBooksStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertMyBooksStoryboard.storyboard; sourceTree = "<group>"; };
@@ -129,6 +137,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FB25F19923B3D92D00CC2FAC /* AlertProfile */ = {
+			isa = PBXGroup;
+			children = (
+				FB25F19A23B3DA4B00CC2FAC /* AlertProfileViewController.swift */,
+				FB25F19C23B3DA5600CC2FAC /* AlertProfileStoryboard.storyboard */,
+				FB25F19E23B3DAC600CC2FAC /* AlertProfileService.swift */,
+			);
+			path = AlertProfile;
+			sourceTree = "<group>";
+		};
 		FB626F7523B0D0DD0060E029 /* ItemCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +177,7 @@
 		FB8038C223AA10E800651A7C /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				FB25F19923B3D92D00CC2FAC /* AlertProfile */,
 				FBAE091323B3870D00D060A5 /* AlertInteres */,
 				FBAE090C23B380A500D060A5 /* AlertMyBooks */,
 				FBAE090923B3735F00D060A5 /* AlertHome */,
@@ -194,7 +213,7 @@
 				FBA8D80723AD225E00F53658 /* HomeNavViewController.swift */,
 				FBA8D80923AD229E00F53658 /* MainTabBarController.swift */,
 				FB626F8923B173D70060E029 /* AddBookViewController.swift */,
-				FBAE090623B372F400D060A5 /* ProfileViewController.swift */,
+				FB25F19523B3CD7900CC2FAC /* ProfileViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -248,6 +267,7 @@
 				FB626F8323B164F20060E029 /* LibrosInteresModel.swift */,
 				FB626F8523B168740060E029 /* PersonasInteresModel.swift */,
 				FB626F8B23B2191D0060E029 /* AddBookModel.swift */,
+				FB25F19723B3D14900CC2FAC /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +339,7 @@
 				FB8038CD23AA10EA00651A7C /* Assets.xcassets in Resources */,
 				FBAE091023B380E500D060A5 /* AlertMyBooksStoryboard.storyboard in Resources */,
 				FBAE090323B36E5700D060A5 /* AlertStoryboard.storyboard in Resources */,
+				FB25F19D23B3DA5600CC2FAC /* AlertProfileStoryboard.storyboard in Resources */,
 				FB8038CB23AA10E800651A7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,8 +399,11 @@
 				FB8038E623AA1B5300651A7C /* Users.swift in Sources */,
 				FB8038C823AA10E800651A7C /* ViewController.swift in Sources */,
 				FB8038C423AA10E800651A7C /* AppDelegate.swift in Sources */,
+				FB25F19B23B3DA4B00CC2FAC /* AlertProfileViewController.swift in Sources */,
+				FB25F19623B3CD7900CC2FAC /* ProfileViewController.swift in Sources */,
 				FBA8D80223AD209F00F53658 /* PersonasInteresadasViewController.swift in Sources */,
 				FB626F7F23B0E23D0060E029 /* HomeModel.swift in Sources */,
+				FB25F19823B3D14900CC2FAC /* ProfileModel.swift in Sources */,
 				FBA8D80823AD225E00F53658 /* HomeNavViewController.swift in Sources */,
 				FB626F8623B168740060E029 /* PersonasInteresModel.swift in Sources */,
 				FB626F7A23B0D14A0060E029 /* ItemCell.swift in Sources */,
@@ -391,8 +415,8 @@
 				FB8038DC23AA114900651A7C /* LoginViewController.swift in Sources */,
 				FBA8D80A23AD229E00F53658 /* MainTabBarController.swift in Sources */,
 				FBAE090B23B373C900D060A5 /* AlertService.swift in Sources */,
+				FB25F19F23B3DAC600CC2FAC /* AlertProfileService.swift in Sources */,
 				FB8038C623AA10E800651A7C /* SceneDelegate.swift in Sources */,
-				FBAE090723B372F400D060A5 /* ProfileViewController.swift in Sources */,
 				FB626F7D23B0E1400060E029 /* BookItem.swift in Sources */,
 				FB626F8823B168EA0060E029 /* Likes.swift in Sources */,
 				FB626F8423B164F20060E029 /* LibrosInteresModel.swift in Sources */,

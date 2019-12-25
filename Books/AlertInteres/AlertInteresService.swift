@@ -19,6 +19,7 @@ class AlertInteresService{
         alertVC.isbn = isbn
         alertVC.user = user
         alertVC.correo = correo
+        
         return alertVC
     }
 }

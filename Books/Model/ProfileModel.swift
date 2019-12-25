@@ -1,8 +1,8 @@
 //
-//  HomeModel.swift
+//  ProfileModel.swift
 //  Books
 //
-//  Created by alumno on 23/12/2019.
+//  Created by alumno on 25/12/2019.
 //  Copyright © 2019 Carlos. All rights reserved.
 //
 
@@ -10,11 +10,13 @@ import Foundation
 import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
-class HomeModel {
+class ProfileModel {
     var bookItemArrayList: [BookItem] = []
+    var homeViewController = HomeViewController()
     var cantidad:Int?
-    func fillArray(completion: @escaping (Bool, [BookItem]) -> Void){
-        let ref = Database.database().reference().child("allBooks")
+    func fillArray(user:String,completion: @escaping (Bool, [BookItem]) -> Void){
+        print(user+"usuario")
+        let ref = Database.database().reference().child("booksUser").child(user)
         ref.observe(.value, with: { (snapshot) in
             
             var bookItemArrayList1 : [BookItem] = []
@@ -31,6 +33,15 @@ class HomeModel {
                     
         })
     
+    }
+    func getUsername(user:String, completion: @escaping (Bool,String)->Void){
+        let ref = Database.database().reference()
+        ref.child("users").observeSingleEvent(of: .value) { (snapshot) in
+        let value = snapshot.value as? NSDictionary
+        let userData = value![user] as! NSDictionary
+        let userUsername = userData["username"]
+            completion(false, userUsername as! String)
+        }
     }
     func wantIt(author:String,image:String,user:String,isbn:String,title:String,correo:String, completion:@escaping (Bool)->Void){
         let ref = Database.database().reference()
@@ -50,6 +61,4 @@ class HomeModel {
             completion(false)
         }
         
-    }
-}
-
+    }}

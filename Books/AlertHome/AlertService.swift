@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 class AlertService{
     
-    func alert(image:UIImage,title:String,author:String, isbn:String , user: String, correo :String, imageURL:String)-> AlertViewController{
+    
+    func alert(image:UIImage,title:String,author:String, isbn:String , user: String, correo :String, imageURL:String, completion: @escaping ()->Void)-> AlertViewController{
         let storyboard = UIStoryboard(name: "AlertStoryboard", bundle: .main)
         let alertVC = storyboard.instantiateViewController(identifier: "AlertVC") as! AlertViewController
         
@@ -21,7 +22,8 @@ class AlertService{
         alertVC.user = user
         alertVC.correo = correo
         alertVC.imageURL = imageURL
-
+        alertVC.userButtonAction = completion
+        
         return alertVC
     }
 }

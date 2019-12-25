@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     var storage = Storage.storage()
     var bookItemArrayList : [BookItem] = []
     var image:UIImage?
-    var cantidad:Int = 0
+    var user:String?
     
     let ref = Database.database().reference(withPath: "allBooks")
     @IBOutlet weak var collectionView: UICollectionView!
@@ -124,11 +124,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         let indexPath = self.collectionView.indexPathForItem(at: location)
         
         if let index = indexPath {
+            
             let cell = self.bookItemArrayList[index.row]
+            DispatchQueue.main.async {
+                let vc = ProfileViewController()
+                vc.user = cell.user
+                
+            }
+
             let url = URL(string:cell.image)
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
-                    let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo,imageURL: cell.image)
+                    let alertVC = alertService.alert(image: image, title: cell.title,author: cell.author, isbn: cell.isbn, user: cell.user, correo: cell.correo,imageURL: cell.image){
+                        Constants.Values.user = cell.user
+                        let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
+                        
+                        self.view.window?.rootViewController = profileViewController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                        
                     present(alertVC,animated: true)
                     
                 }

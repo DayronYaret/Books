@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import MessageUI
 
-class AlertInteresViewController: UIViewController {
+class AlertInteresViewController: UIViewController,MFMailComposeViewControllerDelegate {
 
 
     @IBOutlet weak var authorLabel: UILabel!
@@ -51,12 +52,33 @@ class AlertInteresViewController: UIViewController {
     }
 
     @IBAction func contactTapped(_ sender: Any) {
+        let mailComposeViewController = configuredMailComposeViewController(to: correo, title: titleText)
+            if MFMailComposeViewController.canSendMail() {
+                self.present(mailComposeViewController, animated: true, completion: nil)
+            }else{
+        }
         dismiss(animated: true)
 
     }
     @IBAction func backTapped(_ sender: Any) {
         dismiss(animated: true)
     }
+    func configuredMailComposeViewController(to:String,title:String) -> MFMailComposeViewController {
+            let mailComposerVC = MFMailComposeViewController()
+            mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+    
+            mailComposerVC.setToRecipients([to])
+            mailComposerVC.setSubject("Interesado en: \(self.titleText)")
+        mailComposerVC.setMessageBody("", isHTML: true)
+    
+            return mailComposerVC
+        }
+    
+    
+       // MARK: MFMailComposeViewControllerDelegate Method
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+           controller.dismiss(animated: true, completion: nil)
+        }
     /*
     // MARK: - Navigation
 

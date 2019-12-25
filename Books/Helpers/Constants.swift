@@ -12,6 +12,9 @@ struct Constants{
         static let homeViewController = "HomeVC"
         static let mainTabBarController = "TabBar"
         static let mainViewController = "MainVC"
-
+        static let profileViewController = "ProfileVC"
+    }
+    struct Values {
+        static var user = ""
     }
 }

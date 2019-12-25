@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import MessageUI
 class AlertViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+    let homeModel = HomeModel()
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -24,6 +24,7 @@ class AlertViewController: UIViewController, MFMailComposeViewControllerDelegate
     var correo:String = ""
     var imageURL: String = ""
     
+    var userButtonAction:(()->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,29 +39,20 @@ class AlertViewController: UIViewController, MFMailComposeViewControllerDelegate
     
 
     @IBAction func wantItTapped(_ sender: Any) {
-        let ref = Database.database().reference()
-        let currentUser = Auth.auth().currentUser!.uid
-        //Añadimos a base de datos de libros que te gustan
-        var book = ["autor": author, "image": imageURL, "isbn": isbn, "title": titleText, "user": user, "correo": correo]
-        ref.child("BooksILike").child(currentUser).child(titleText+"_"+isbn).setValue(book)
-        //Añadimos a base de datos de likes
-        ref.child("users").observeSingleEvent(of: .value) { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let userData = value![currentUser] as! NSDictionary
-            let userUsername = userData["username"]
-            let publisherData = value![self.user] as! NSDictionary
-            let publisherUsername = publisherData["username"]
-            var like = ["publisher":publisherUsername,"title":self.titleText,"user":userUsername]
-            ref.child("Likes").child(self.user).child(currentUser).setValue(like)
+        homeModel.wantIt(author: author, image: imageURL, user: user, isbn: isbn, title: titleText, correo: correo) { (error) in
+            if(!error){
+                self.dismiss(animated: true)
+
+            }
+
         }
-        //print(ref.child("users").child(currentUser).value(forKey: "username"))
-        //let user2 = ref.child("users").child(currentUser).value(forKey: "username")
-        //var like = ["publisher":publisher,"title":titleText,"user":user2]
-        //ref.child("Likes").child(user).child(currentUser).setValue(like)
-        dismiss(animated: true)
+
     }
     @IBAction func goToUserProfileTapped(_ sender: Any) {
+        userButtonAction?()
         dismiss(animated: true)
+        
+
 
     }
     @IBAction func contactWithTheUserTapped(_ sender: Any) {
