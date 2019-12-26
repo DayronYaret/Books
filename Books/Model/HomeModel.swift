@@ -14,15 +14,18 @@ class HomeModel {
     var bookItemArrayList: [BookItem] = []
     var cantidad:Int?
     var filter:[BookItem] = []
+    
+    
+    
     func fillArray(completion: @escaping (Bool, [BookItem]) -> Void){
         let ref = Database.database().reference().child("allBooks")
         ref.observe(.value, with: { (snapshot) in
             
             var bookItemArrayList1 : [BookItem] = []
+            print(snapshot.value)
             for child in snapshot.children{
                 if let snapshot = child as? DataSnapshot,
                     let book = BookItem(snapshot: snapshot){
-                    print(book)
                     bookItemArrayList1.append(book)
                     
                 }
