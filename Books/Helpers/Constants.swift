@@ -16,5 +16,6 @@ struct Constants{
     }
     struct Values {
         static var user = ""
+        static var array: [BookItem] = []
     }
 }

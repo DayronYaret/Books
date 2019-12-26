@@ -22,6 +22,7 @@ class HomeModel {
             for child in snapshot.children{
                 if let snapshot = child as? DataSnapshot,
                     let book = BookItem(snapshot: snapshot){
+                    print(book)
                     bookItemArrayList1.append(book)
                     
                 }
@@ -29,10 +30,12 @@ class HomeModel {
             self.cantidad = bookItemArrayList1.count
             self.bookItemArrayList = bookItemArrayList1
             completion(false,self.bookItemArrayList)
+            Constants.Values.array = self.bookItemArrayList
                     
         })
     
     }
+    
     func wantIt(author:String,image:String,user:String,isbn:String,title:String,correo:String, completion:@escaping (Bool)->Void){
         let ref = Database.database().reference()
         let currentUser = Auth.auth().currentUser!.uid
@@ -52,12 +55,6 @@ class HomeModel {
         }
         
     }
-    func filter(title:String, completion: @escaping (Bool,[BookItem])->Void){
-        filter = bookItemArrayList.filter({ (BookItem) -> Bool in
-            let countryText: NSString = BookItem.title as NSString
-                return (countryText.range(of: title, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-        })
-        completion(false,filter)
-    }
+
 }
 

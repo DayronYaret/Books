@@ -12,11 +12,11 @@ import FirebaseStorage
 import Firebase
 
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating	 {
-        //variables para buscar
+    //variables para buscar
     var filtered:[BookItem] = []
     var searchActive : Bool = false
     let searchController = UISearchController(searchResultsController: nil)
-    
+    var array:[BookItem] = []
     
     let homeModel = HomeModel()
     let alertService = AlertService()
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         //Search setup
-
+        
         // Do any additional setup after loading the view.
         //self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -47,12 +47,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         //llenamos el array
         homeModel.fillArray { (error, array) in
-                   if(error == false){
-                       self.bookItemArrayList = array
-                    self.collectionView.reloadData()
-
-                   }
-               }
+            if(!error){
+                self.bookItemArrayList = array
+                self.collectionView.reloadData()
+            }
+        }
     }
     @IBAction func search(_ sender: Any) {
         self.searchController.searchResultsUpdater = self
@@ -84,7 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-            }
+    }
     
     func transitionToMain(){
         let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
@@ -99,12 +98,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if searchActive {
-              return filtered.count
-          }
-          else
-          {
-          return bookItemArrayList.count
-          }
+            return filtered.count
+        }
+        else
+        {
+            return bookItemArrayList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,27 +112,22 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         //Añadimos la opcion de pulsar en el collectionViewCell
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         
-        DispatchQueue.global().async { [weak self] in
-            self!.homeModel.fillArray { (error, array) in
-                if(error == false){
-                    let url = URL(string:array[indexPath.row].image)
-                    if let data = try? Data(contentsOf: url!) {
-                        if let image = UIImage(data: data) {
-                            DispatchQueue.main.async {
-                                cell.setData(image: image, author: array[indexPath.row].author, title: array[indexPath.row].title)
-                                print(array.count, "cantidad")
-                                
-                            }
-                        }
-                        else
-                        {
-                            print("Fallo en la descarga de la imagen")
-                        }
-                        
-                    }
-                    
-                }
+        
+        if(searchActive == true){
+            array = Constants.Values.array
+        }else{
+            array = bookItemArrayList
+        }
+        let url = URL(string:array[indexPath.row].image)
+        if let data = try? Data(contentsOf: url!) {
+            if let image = UIImage(data: data) {
+                cell.setData(image: image, author: self.array[indexPath.row].author, title: self.array[indexPath.row].title)
                 
+                
+            }
+            else
+            {
+                print("Fallo en la descarga de la imagen")
             }
             
         }
@@ -141,7 +135,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         return cell
     }
     
-
+    
     //funcion al pulsar la cell
     @objc func tap(_ sender: UITapGestureRecognizer) {
         
@@ -161,7 +155,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
                         self.view.window?.rootViewController = profileViewController
                         self.view.window?.makeKeyAndVisible()
                     }
-                        
+                    
                     present(alertVC,animated: true)
                     
                 }
@@ -170,48 +164,45 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         }
     }
     //MARK: SearchBar
-
     
-        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            searchActive = false
-            self.dismiss(animated: true, completion: nil)
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        let searchString = searchController.searchBar.text
+        filtered = bookItemArrayList.filter({ (BookItem) -> Bool in
+            let countryText: NSString = BookItem.title as! NSString
+            return (countryText.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        })
+        Constants.Values.array = filtered
+        collectionView.reloadData()
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+        collectionView.reloadData()
+    }
+    
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        if !searchActive {
+            searchActive = true
         }
         
-            
-            func updateSearchResults(for searchController: UISearchController)
-            {
-                let searchString = searchController.searchBar.text
-                
-                homeModel.filter(title: searchString!) { (error, array) in
-                    if(!error){
-                        self.filtered = array
-                    }
-                    
-                }
-                collectionView.reloadData()
-                
-        
-            }
-            
-            func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-                searchActive = true
-            }
-            
-            
-            func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-                searchActive = false
-                collectionView.reloadData()
-            }
-            
-            func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-                if !searchActive {
-                    searchActive = true
-                }
-                
-                searchController.searchBar.resignFirstResponder()
-            }
-
-
+        searchController.searchBar.resignFirstResponder()
+    }
+    
+    
 }
 
 
