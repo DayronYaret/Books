@@ -7,19 +7,22 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseDatabase
 class AlertMyBooksViewController: UIViewController {
 
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
+    let ref = Database.database().reference()
     var author: String = ""
     var titleText: String = ""
     var imagen: UIImage!
     var isbn:String = ""
     var user:String = ""
     var correo:String = ""
+    var imageUrl:String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,10 @@ class AlertMyBooksViewController: UIViewController {
       }
     
     @IBAction func deleteTapped(_ sender: Any) {
+        let currentUser = Auth.auth().currentUser?.uid
+        ref.child("allBooks").child(currentUser!+"_"+titleText+"_"+isbn).removeValue()
+        ref.child("booksUser").child(currentUser!).child(titleText+"_"+isbn).removeValue()
+
         dismiss(animated: true)
     }
     @IBAction func backTapped(_ sender: Any) {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class AlertMyBooksService{
     
-    func alert(image:UIImage,title:String,author:String, isbn:String , user: String, correo :String)-> AlertMyBooksViewController{
+    func alert(image:UIImage,title:String,author:String, isbn:String , user: String, correo :String, imageUrl:String)-> AlertMyBooksViewController{
         let storyboard = UIStoryboard(name: "AlertMyBooksStoryboard", bundle: .main)
         let alertVC = storyboard.instantiateViewController(identifier: "AlertMyBooksVC") as! AlertMyBooksViewController
         
@@ -20,6 +20,7 @@ class AlertMyBooksService{
         alertVC.isbn = isbn
         alertVC.user = user
         alertVC.correo = correo
+        alertVC.imageUrl = imageUrl
         return alertVC
     }
 }
