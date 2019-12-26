@@ -13,6 +13,7 @@ import FirebaseAuth
 class HomeModel {
     var bookItemArrayList: [BookItem] = []
     var cantidad:Int?
+    var filter:[BookItem] = []
     func fillArray(completion: @escaping (Bool, [BookItem]) -> Void){
         let ref = Database.database().reference().child("allBooks")
         ref.observe(.value, with: { (snapshot) in
@@ -50,6 +51,13 @@ class HomeModel {
             completion(false)
         }
         
+    }
+    func filter(title:String, completion: @escaping (Bool,[BookItem])->Void){
+        filter = bookItemArrayList.filter({ (BookItem) -> Bool in
+            let countryText: NSString = BookItem.title as NSString
+                return (countryText.range(of: title, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        })
+        completion(false,filter)
     }
 }
 

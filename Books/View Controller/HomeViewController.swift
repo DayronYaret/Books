@@ -11,7 +11,13 @@ import FirebaseAuth
 import FirebaseStorage
 import Firebase
 
-class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating	 {
+        //variables para buscar
+    var filtered:[BookItem] = []
+    var searchActive : Bool = false
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    
     let homeModel = HomeModel()
     let alertService = AlertService()
     var storage = Storage.storage()
@@ -24,7 +30,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Search setup
+
         // Do any additional setup after loading the view.
         //self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -39,7 +46,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         
         //llenamos el array
-        refreshView()
+        homeModel.fillArray { (error, array) in
+                   if(error == false){
+                       self.bookItemArrayList = array
+                    self.collectionView.reloadData()
+
+                   }
+               }
+    }
+    @IBAction func search(_ sender: Any) {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for tools and resources"
+        searchController.searchBar.sizeToFit()
+        
+        searchController.searchBar.becomeFirstResponder()
+        
+        self.navigationItem.titleView = searchController.searchBar
     }
     
     @IBAction func logOut(_ sender: Any) {
@@ -56,7 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-    }
+            }
     
     func transitionToMain(){
         let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
@@ -70,7 +98,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return bookItemArrayList.count
+        if searchActive {
+              return filtered.count
+          }
+          else
+          {
+          return bookItemArrayList.count
+          }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -97,7 +131,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
                         }
                         
                     }
-                    self?.bookItemArrayList = array
                     
                 }
                 
@@ -108,15 +141,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         return cell
     }
     
-    func refreshView(){
-        homeModel.fillArray { (error, array) in
-            if(error == false){
-                self.bookItemArrayList = array
-                self.collectionView.reloadData()
-            }
-        }
-        
-    }
+
     //funcion al pulsar la cell
     @objc func tap(_ sender: UITapGestureRecognizer) {
         
@@ -144,6 +169,49 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
             
         }
     }
+    //MARK: SearchBar
+
+    
+        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+            
+            func updateSearchResults(for searchController: UISearchController)
+            {
+                let searchString = searchController.searchBar.text
+                
+                homeModel.filter(title: searchString!) { (error, array) in
+                    if(!error){
+                        self.filtered = array
+                    }
+                    
+                }
+                collectionView.reloadData()
+                
+        
+            }
+            
+            func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+                searchActive = true
+            }
+            
+            
+            func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+                searchActive = false
+                collectionView.reloadData()
+            }
+            
+            func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+                if !searchActive {
+                    searchActive = true
+                }
+                
+                searchController.searchBar.resignFirstResponder()
+            }
+
+
 }
 
 
