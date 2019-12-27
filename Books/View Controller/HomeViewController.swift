@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
     func transitionToMain(){
-        let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainViewController) as? ViewController
+        let mainViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.navMainController) as? UINavigationController
         
         view.window?.rootViewController = mainViewController
         view.window?.makeKeyAndVisible()
