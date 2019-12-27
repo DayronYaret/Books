@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -15,13 +16,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setUpElements()
+        print(Auth.auth().currentUser)
+        
+        if(Auth.auth().currentUser != nil){
+            print("hola")
+            DispatchQueue.main.async {
+                self.transitionToMain()
+
+            }
+        }else{
+            print("adios")
+            setUpElements()
+        }
+
     }
     func setUpElements(){
         //Damos estilo a los elementos
         Utilities.styleFilledButton(singupButton)
         Utilities.styleFilledButton(loginButton)
     }
+    
+    func transitionToMain(){
+            let mainTabBarController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.mainTabBarController) as? MainTabBarController
+                           
+             view.window?.rootViewController = mainTabBarController
+             view.window?.makeKeyAndVisible()
+
+        }
 
 }
 
